@@ -1,31 +1,31 @@
 <?php get_header(); ?>
-	
-	<div id="content">
 
-	<div class="kirin">
-	<div class="kirin-inner">
-	
-		<div id="inner-content" class="row collapse">
-	
-		    <main id="main" class="columns" role="main">
+    <div id="content">
 
-				
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <div class="kirin">
+            <div class="kirin-inner">
 
-			    	<?php get_template_part( 'parts/loop', 'page' ); ?>
-			    
-			    <?php endwhile; endif; ?>
+                <div id="inner-content" class="row collapse">
 
-			</main> <!-- end #main -->
+                    <main id="main" class="columns small-12 large-8 xlarge-9" role="main">
 
-		    <?php // get_sidebar(); ?>
-		    
-		</div> <!-- end #inner-content -->
 
-	</div><!-- end .kirin-inner -->
+                        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	</div><!-- end .kirin -->
+                            <?php get_template_part('parts/loop', 'page'); ?>
 
-	</div> <!-- end #content -->
+                        <?php endwhile; endif; ?>
+
+                    </main> <!-- end #main -->
+
+                    <?php // get_sidebar(); ?>
+
+                </div> <!-- end #inner-content -->
+
+            </div><!-- end .kirin-inner -->
+
+        </div><!-- end .kirin -->
+
+    </div> <!-- end #content -->
 
 <?php get_footer(); ?>

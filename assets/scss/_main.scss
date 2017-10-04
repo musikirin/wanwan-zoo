@@ -50,26 +50,22 @@ hr {
 }
 
 $kirin-margin: -125px;
-$kirin-width: 1000px;
+$kirin-width: 1280px;
 $kirin-top: 385;
 $kirin-right: 50;
 $kirin-bottom: 855;
 $kirin-left: 980;
 
 .kirin {
-  position: relative;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  border-style: solid;
-  -moz-border-image: url(../images/kirin.png) $kirin-top $kirin-right $kirin-bottom $kirin-left fill round;
-  -webkit-border-image: url(../images/kirin.png) $kirin-top $kirin-right $kirin-bottom $kirin-left fill round;
-  -o-border-image: url(../images/kirin.png) $kirin-top $kirin-right $kirin-bottom $kirin-left fill round;
-  border-image: url(../images/kirin.png) $kirin-top $kirin-right $kirin-bottom $kirin-left fill round;
   max-width: $kirin-width;
-  left: $kirin-margin / 2;
+  border: {
+    image: url(../images/kirin.png) $kirin-top $kirin-right $kirin-bottom $kirin-left fill round;
+    style: solid;
+    width: calc(#{$kirin-top}px / 4) calc(#{$kirin-right}px / 4) calc(#{$kirin-bottom}px / 4) calc(#{$kirin-left}px / 4);
+  }
   margin: 20px calc(#{$kirin-margin} / 2) 0;
-  border-width: calc(#{$kirin-top}px / 4) calc(#{$kirin-right}px / 4) calc(#{$kirin-bottom}px / 4) calc(#{$kirin-left}px / 4);
+  position: relative;
+  left: $kirin-margin / 2;
   .kirin-inner {
     margin-left: $kirin-margin / 2;
   }
@@ -89,62 +85,55 @@ $kirin-left: 980;
       margin-left: $kirin-margin;
     }
   }
+  @include breakpoint(xlarge) {
+    left: $kirin-margin * 1.5;
+    margin: 20px calc(#{$kirin-margin} / 4) 0 0;
+    border-width: calc(#{$kirin-top}px / 2) calc(#{$kirin-right}px / 2) calc(#{$kirin-bottom}px / 2) calc(#{$kirin-left}px / 2);
+    .kirin-inner {
+      margin-left: $kirin-margin;
+    }
+  }
 }
 
 .kirin_box {
   display: block;
-  margin: 85px 0 20px;
-  position: relative;
-  padding: 3em 1.5em 1.5em 60px;
   border: 3px solid #a67c52;
-  -webkit-border-radius: 1em;
-  -moz-border-radius: 1em;
   border-radius: 1em;
+  position: relative;
+  margin: 85px 0 20px;
   padding: 2.2em 1em 1em 1.5em;
   @include breakpoint(medium) {
     padding: 3em 1.5em 1.5em 3em;
   }
   &::before {
     content: 'きりんコメント';
-    position: absolute;
     display: block;
+    background-size: contain;
+    background-color: $primary-color;
+    border-radius: 1.5em;
     font-weight: bold;
     color: $white;
-    -webkit-border-radius: 1.5em;
-    -moz-border-radius: 1.5em;
-    border-radius: 1.5em;
-    background-color: $primary-color;
+    padding: .7em .7em .7em 50px;
+    position: absolute;
+    transform: translate(0, -50%);
     top: 0;
     left: 0;
-    -webkit-background-size: contain;
-    background-size: contain;
-    -webkit-transform: translate(0, -50%);
-    -moz-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    -o-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    padding: .7em .7em .7em 50px;
     @include breakpoint(medium) {
       padding: .9em 1.5em .9em 75px;
     }
   }
   &::after {
     content: '';
-    position: absolute;
     display: block;
-    top: 0;
-    left: 0;
-    background-image: url('../images/face-icon.svg');
-    background-repeat: no-repeat;
-    -webkit-background-size: contain;
-    background-size: contain;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     width: 100.8px;
     height: 91px;
+    background-image: url('../images/face-icon.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
     @include breakpoint(medium) {
       width: 144px;
       height: 120px;
@@ -227,13 +216,13 @@ h4, .h4 {
     width: 1em;
     height: 1em;
     top: .15em;
-    margin-right: .7em;
+    margin-right: .5em;
     -webkit-border-radius: .5em;
     -moz-border-radius: .5em;
     border-radius: .5em;
     background-color: $primary-color;
   }
-  margin: 1em 0;
+  margin: .7em 0;
   color: $black;
   font-weight: 700;
 }

@@ -4,25 +4,28 @@
 
         <div class="kirin">
             <div class="kirin-inner">
-                <div id="inner-content" class="row collapse">
+                <div id="inner-content">
+                    <div class="row">
 
-                    <main id="main" class="columns" role="main">
+                        <main id="main" class="columns small-12 large-8 xlarge-9" role="main">
 
 
-                        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                            <?php get_template_part('parts/loop', 'single'); ?>
+                                <?php get_template_part('parts/loop', 'single'); ?>
 
-                        <?php endwhile;
-                        else : ?>
+                            <?php endwhile;
+                            else : ?>
 
-                            <?php get_template_part('parts/content', 'missing'); ?>
+                                <?php get_template_part('parts/content', 'missing'); ?>
 
-                        <?php endif; ?>
+                            <?php endif; ?>
 
-                    </main> <!-- end #main -->
+                        </main> <!-- end #main -->
 
-                    <?php // get_sidebar(); ?>
+                        <?php get_sidebar(); ?>
+
+                    </div><!-- end .row -->
 
                 </div> <!-- end #inner-content -->
 
