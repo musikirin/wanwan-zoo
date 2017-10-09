@@ -50,7 +50,7 @@ hr {
 }
 
 $kirin-margin: -125px;
-$kirin-width: 1280px;
+$kirin-width: 1440px;
 $kirin-top: 385;
 $kirin-right: 50;
 $kirin-bottom: 855;
@@ -61,34 +61,50 @@ $kirin-left: 980;
   border: {
     image: url(../images/kirin.png) $kirin-top $kirin-right $kirin-bottom $kirin-left fill round;
     style: solid;
-    width: calc(#{$kirin-top}px / 4) calc(#{$kirin-right}px / 4) calc(#{$kirin-bottom}px / 4) calc(#{$kirin-left}px / 4);
+    width:
+            calc(#{$kirin-top}px / 4)
+            calc(#{$kirin-right}px / 4)
+            calc(#{$kirin-bottom}px / 4)
+            calc(#{$kirin-left}px / 4);
   }
-  margin: 20px calc(#{$kirin-margin} / 2) 0;
+  margin: 20px calc( ( #{$kirin-left}px + #{$kirin-margin} - #{$kirin-right}px ) / -4 / 4 ) 0;
   position: relative;
-  left: $kirin-margin / 2;
+  left: calc( (#{$kirin-left}px + #{$kirin-margin}) / -4 / 4 );
   .kirin-inner {
     margin-left: $kirin-margin / 2;
   }
   @include breakpoint(medium) {
-    left: $kirin-margin;
-    margin: 20px calc(#{$kirin-margin} / 4 * 3) 0 calc(#{$kirin-margin} / 4);
-    border-width: calc(#{$kirin-top}px / 3) calc(#{$kirin-right}px / 3) calc(#{$kirin-bottom}px / 3) calc(#{$kirin-left}px / 3);
+    border-width:
+            calc(#{$kirin-top}px / 3)
+            calc(#{$kirin-right}px / 3)
+            calc(#{$kirin-bottom}px / 3)
+            calc(#{$kirin-left}px / 3);
+    margin: 20px calc( ( #{$kirin-left}px + #{$kirin-margin} - #{$kirin-right}px ) / -4 / 3 ) 0;
+    left: calc( (#{$kirin-left}px + #{$kirin-margin}) / -4 / 3 );
     .kirin-inner {
       margin-left: $kirin-margin * 2 / 3;
     }
   }
   @include breakpoint(large) {
-    left: $kirin-margin * 1.5;
-    margin: 20px calc(#{$kirin-margin} / 4 * 2) 0 0;
-    border-width: calc(#{$kirin-top}px / 2) calc(#{$kirin-right}px / 2) calc(#{$kirin-bottom}px / 2) calc(#{$kirin-left}px / 2);
+    border-width:
+            calc(#{$kirin-top}px / 2)
+            calc(#{$kirin-right}px / 2)
+            calc(#{$kirin-bottom}px / 2)
+            calc(#{$kirin-left}px / 2);
+    margin: 20px calc( ( #{$kirin-left}px + #{$kirin-margin} - #{$kirin-right}px ) / -4 / 2 ) 0;
+    left: calc( (#{$kirin-left}px + #{$kirin-margin}) / -4 / 2 );
     .kirin-inner {
       margin-left: $kirin-margin;
     }
   }
   @include breakpoint(xlarge) {
-    left: $kirin-margin * 1.5;
-    margin: 20px calc(#{$kirin-margin} / 4) 0 0;
-    border-width: calc(#{$kirin-top}px / 2) calc(#{$kirin-right}px / 2) calc(#{$kirin-bottom}px / 2) calc(#{$kirin-left}px / 2);
+    border-width:
+            calc(#{$kirin-top}px / 2)
+            calc(#{$kirin-right}px / 2)
+            calc(#{$kirin-bottom}px / 2)
+            calc(#{$kirin-left}px / 2);
+    margin: 20px calc( ( #{$kirin-left}px + #{$kirin-margin} - #{$kirin-right}px ) / -4 / 2 ) 0;
+    left: calc( (#{$kirin-left}px + #{$kirin-margin}) / -4 / 2 );
     .kirin-inner {
       margin-left: $kirin-margin;
     }

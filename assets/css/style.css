@@ -5885,34 +5885,34 @@ hr {
         border-width: 590px 760px 225px 0; } }
 
 .kirin {
-  max-width: 1280px;
+  max-width: 1440px;
   border-image: url(../images/kirin.png) 385 50 855 980 fill round;
   border-style: solid;
   border-width: calc(385px / 4) calc(50px / 4) calc(855px / 4) calc(980px / 4);
-  margin: 20px calc(-125px / 2) 0;
+  margin: 20px calc( ( 980px + -125px - 50px ) / -4 / 4) 0;
   position: relative;
-  left: -62.5px; }
+  left: calc( (980px + -125px) / -4 / 4); }
   .kirin .kirin-inner {
     margin-left: -62.5px; }
   @media screen and (min-width: 33.75em) {
     .kirin {
-      left: -125px;
-      margin: 20px calc(-125px / 4 * 3) 0 calc(-125px / 4);
-      border-width: calc(385px / 3) calc(50px / 3) calc(855px / 3) calc(980px / 3); }
+      border-width: calc(385px / 3) calc(50px / 3) calc(855px / 3) calc(980px / 3);
+      margin: 20px calc( ( 980px + -125px - 50px ) / -4 / 3) 0;
+      left: calc( (980px + -125px) / -4 / 3); }
       .kirin .kirin-inner {
         margin-left: -83.33333px; } }
   @media screen and (min-width: 47.5em) {
     .kirin {
-      left: -187.5px;
-      margin: 20px calc(-125px / 4 * 2) 0 0;
-      border-width: calc(385px / 2) calc(50px / 2) calc(855px / 2) calc(980px / 2); }
+      border-width: calc(385px / 2) calc(50px / 2) calc(855px / 2) calc(980px / 2);
+      margin: 20px calc( ( 980px + -125px - 50px ) / -4 / 2) 0;
+      left: calc( (980px + -125px) / -4 / 2); }
       .kirin .kirin-inner {
         margin-left: -125px; } }
   @media screen and (min-width: 61.25em) {
     .kirin {
-      left: -187.5px;
-      margin: 20px calc(-125px / 4) 0 0;
-      border-width: calc(385px / 2) calc(50px / 2) calc(855px / 2) calc(980px / 2); }
+      border-width: calc(385px / 2) calc(50px / 2) calc(855px / 2) calc(980px / 2);
+      margin: 20px calc( ( 980px + -125px - 50px ) / -4 / 2) 0;
+      left: calc( (980px + -125px) / -4 / 2); }
       .kirin .kirin-inner {
         margin-left: -125px; } }
 
