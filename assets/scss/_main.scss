@@ -109,6 +109,9 @@ $kirin-left: 980;
       margin-left: $kirin-margin;
     }
   }
+  @include breakpoint(xxlarge){
+    margin: 20px auto 0 auto;
+  }
 }
 
 .kirin_box {

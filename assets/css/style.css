@@ -5915,6 +5915,9 @@ hr {
       left: calc( (980px + -125px) / -4 / 2); }
       .kirin .kirin-inner {
         margin-left: -125px; } }
+  @media screen and (min-width: 90em) {
+    .kirin {
+      margin: 20px auto 0 auto; } }
 
 .kirin_box {
   display: block;
